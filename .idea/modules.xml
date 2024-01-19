@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/star_lateks.iml" filepath="$PROJECT_DIR$/star_lateks.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/star_lateks_android.iml" filepath="$PROJECT_DIR$/android/star_lateks_android.iml" />
+    </modules>
+  </component>
+</project>

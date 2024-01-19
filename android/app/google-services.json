@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "627781880665",
+    "project_id": "star-latex",
+    "storage_bucket": "star-latex.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:627781880665:android:3958cdd8b182a4b39b5a48",
+        "android_client_info": {
+          "package_name": "com.starlateks.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUnXKZVA01sy1gvBVQcmBGYAtuxJXlvD8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

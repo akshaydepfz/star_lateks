@@ -1,0 +1,1 @@
+ /Users/banacityinnovaations/Documents/star_lateks/.dart_tool/flutter_build/f338242736eb02fdb8e7091bd71d05df/native_assets.yaml: 
