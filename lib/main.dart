@@ -2,6 +2,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:star_lateks/route/app_routing.dart';
+import 'package:star_lateks/view/customer/screens/customer_add_screen.dart';
 import 'package:star_lateks/view/customer/services/customer_provider.dart';
 import 'package:star_lateks/view/weight_list/providers/weight_list_provider.dart';
 import 'package:star_lateks/view/weight_list/screens/add_weight_list.dart';
@@ -28,12 +30,13 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Star Lateks',
+        routes: AppRouting.routes,
         theme: ThemeData(
           textTheme: GoogleFonts.robotoTextTheme(Theme.of(context).textTheme),
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
           useMaterial3: true,
         ),
-        home: const AddWeightList(),
+        initialRoute: '/',
       ),
     );
   }

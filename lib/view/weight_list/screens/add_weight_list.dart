@@ -5,8 +5,19 @@ import 'package:star_lateks/view/auto_suggession_textfield.dart';
 import 'package:star_lateks/view/common/primary_button.dart';
 import 'package:star_lateks/view/weight_list/providers/weight_list_provider.dart';
 
-class AddWeightList extends StatelessWidget {
+class AddWeightList extends StatefulWidget {
   const AddWeightList({super.key});
+
+  @override
+  State<AddWeightList> createState() => _AddWeightListState();
+}
+
+class _AddWeightListState extends State<AddWeightList> {
+  @override
+  void initState() {
+    Provider.of<WeightListProvider>(context, listen: false).getCustomerList();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +46,7 @@ class AddWeightList extends StatelessWidget {
               AppSpacing.h10,
               AutoSuggestionText(
                   controller: provider.customerController,
-                  list: [],
+                  list: provider.customerList.map((e) => e.name).toList(),
                   label: 'Select Customer'),
               const Spacer(),
               PrimaryButton(
