@@ -11,6 +11,7 @@ class CustomerProvider extends ChangeNotifier {
   TextEditingController customerBankAccountController = TextEditingController();
   TextEditingController customerPhoneController = TextEditingController();
   List<CustomerModel>? customerList;
+  CustomerModel? customerModel;
   ScrollController scrollController = ScrollController();
 
   void whenScrollDownClick() {
@@ -20,6 +21,10 @@ class CustomerProvider extends ChangeNotifier {
       curve: Curves.easeOut,
     );
   }
+
+Future<void> getCustomer()async{
+  
+}
 
   bool _isLoading = false;
   bool get isLoading => _isLoading;

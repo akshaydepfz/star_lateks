@@ -3,10 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:star_lateks/route/app_routing.dart';
-import 'package:star_lateks/view/customer/screens/customer_add_screen.dart';
 import 'package:star_lateks/view/customer/services/customer_provider.dart';
 import 'package:star_lateks/view/weight_list/providers/weight_list_provider.dart';
-import 'package:star_lateks/view/weight_list/screens/add_weight_list.dart';
 import 'view/home/provider/home_provider.dart';
 
 Future<void> main() async {
