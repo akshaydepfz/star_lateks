@@ -23,9 +23,14 @@ class PrimaryTextField extends StatelessWidget {
       keyboardType: keyboardType,
       controller: controller,
       decoration: InputDecoration(
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.grey.shade300),
+        ),
         labelText: labelText,
         hintText: hintText,
-        border: const OutlineInputBorder(),
+        border: OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.grey.shade300),
+        ),
       ),
     );
   }

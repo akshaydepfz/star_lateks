@@ -5,7 +5,8 @@ import 'package:star_lateks/view/customer/services/customer_provider.dart';
 
 class WeightListProvider extends ChangeNotifier {
   TextEditingController customerController = TextEditingController();
-
+  final TextEditingController advancePaidControl = TextEditingController();
+  final TextEditingController weightControl = TextEditingController();
   List<CustomerModel> _customerList = [];
   List<CustomerModel> get customerList => _customerList;
 
@@ -14,8 +15,8 @@ class WeightListProvider extends ChangeNotifier {
   final TextEditingController customerNameController = TextEditingController();
 
   Future<void> submit(BuildContext context) async {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => const CustomerListScreen()));
+    Navigator.push(context,
+        MaterialPageRoute(builder: (context) => const CustomerListScreen()));
   }
 
   Future<void> getCustomerList() async {

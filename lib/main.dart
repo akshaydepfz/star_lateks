@@ -4,6 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:star_lateks/route/app_routing.dart';
 import 'package:star_lateks/view/customer/services/customer_provider.dart';
+import 'package:star_lateks/view/sales/providers/sales_provider.dart';
+import 'package:star_lateks/view/shop/services/shop_services.dart';
 import 'package:star_lateks/view/weight_list/providers/weight_list_provider.dart';
 import 'view/home/provider/home_provider.dart';
 
@@ -24,6 +26,8 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => HomeProvider()),
         ChangeNotifierProvider(create: (_) => WeightListProvider()),
         ChangeNotifierProvider(create: (_) => CustomerProvider()),
+        ChangeNotifierProvider(create: (_) => ShopServices()),
+        ChangeNotifierProvider(create: (_) => SalesProvider()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -34,7 +38,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
           useMaterial3: true,
         ),
-        initialRoute: '/',
+        initialRoute: '/shopAdd',
       ),
     );
   }
