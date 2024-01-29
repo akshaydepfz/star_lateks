@@ -49,7 +49,9 @@ class _CustomerListScreenState extends State<CustomerListScreen> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            CustomerViewScreen()));
+                                            CustomerViewScreen(
+                                              id: provider.customerList![i].uid,
+                                            )));
                               },
                               title: Text(provider.customerList![i].name),
                               subtitle: Text(provider.customerList![i].address),

@@ -22,9 +22,18 @@ class CustomerProvider extends ChangeNotifier {
     );
   }
 
-Future<void> getCustomer()async{
-  
-}
+  Future<void> getCustomer(String id) async {
+    await _collectionReference
+        .doc(id)
+        .get()
+        .then((DocumentSnapshot documentSnapshot) {
+      if (documentSnapshot.exists) {
+        customerModel = CustomerModel.fromJson(
+            documentSnapshot.data() as Map<String, dynamic>);
+        notifyListeners();
+      }
+    });
+  }
 
   bool _isLoading = false;
   bool get isLoading => _isLoading;
@@ -211,3 +220,4 @@ class CustomerModel {
     );
   }
 }
+    

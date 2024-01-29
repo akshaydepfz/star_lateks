@@ -4,13 +4,20 @@ import 'package:star_lateks/core/app_spacing.dart';
 import 'package:star_lateks/view/customer/services/customer_provider.dart';
 
 class CustomerViewScreen extends StatefulWidget {
-  const CustomerViewScreen({super.key});
-
+  const CustomerViewScreen({super.key, required this.id});
+  final String id;
   @override
   State<CustomerViewScreen> createState() => _CustomerViewScreenState();
 }
 
 class _CustomerViewScreenState extends State<CustomerViewScreen> {
+  @override
+  void initState() {
+    Provider.of<CustomerProvider>(context, listen: false)
+        .getCustomer(widget.id);
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     final provider = Provider.of<CustomerProvider>(context);
@@ -25,32 +32,71 @@ class _CustomerViewScreenState extends State<CustomerViewScreen> {
         title: const Text('Customer Details'),
       ),
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(15.0),
-          child: SingleChildScrollView(
-            controller: provider.scrollController,
-            physics: const BouncingScrollPhysics(),
-            child: const Column(
-              children: [
-                DetailsTile(title: 'Name', value: 'Name'),
-                DetailsTile(title: 'Phone Number', value: 'Phone Number'),
-                DetailsTile(title: 'Address', value: 'Address'),
-                DetailsTile(title: 'WhatsApp Number', value: 'WhatsApp Number'),
-                DetailsTile(
-                    title: 'Bank Account Number', value: 'Bank Account Number'),
-                DetailsTile(title: 'Advance Paid', value: '12.000/-'),
-                DetailsTile(title: 'Advance Balance', value: '12.000/-'),
-                DetailsTile(title: 'Total Balance', value: '12.000/-'),
-                DetailsTile(title: 'Total Weight', value: '12.000/-'),
-                DetailsTile(title: 'Total Amount', value: '12.000/-'),
-                DetailsTile(title: 'Total Paid', value: '12.000/-'),
-                DetailsTile(title: 'Collected Barrels (Qty)', value: '12'),
-                DetailsTile(title: 'Barrels Remining (Qty)', value: '12'),
-                DetailsTile(title: 'Total Barrels (Qty)', value: '12'),
-              ],
-            ),
-          ),
-        ),
+        child: provider.customerList == null
+            ? const Center(
+                child: CircularProgressIndicator(),
+              )
+            : Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: SingleChildScrollView(
+                  controller: provider.scrollController,
+                  physics: const BouncingScrollPhysics(),
+                  child: Column(
+                    children: [
+                      DetailsTile(
+                          title: 'Name', value: provider.customerModel!.name),
+                      DetailsTile(
+                          title: 'Phone Number',
+                          value: provider.customerModel!.phone),
+                      DetailsTile(
+                          title: 'Address',
+                          value: provider.customerModel!.address),
+                      DetailsTile(
+                          title: 'WhatsApp Number',
+                          value: provider.customerModel!.whatsApp),
+                      DetailsTile(
+                          title: 'Bank Account Number',
+                          value: provider.customerModel!.bankAccount),
+                      DetailsTile(
+                          title: 'Advance Paid',
+                          value:
+                              provider.customerModel!.advanceAmount.toString()),
+                      DetailsTile(
+                          title: 'Advance Balance',
+                          value:
+                              provider.customerModel!.advanceAmount.toString()),
+                      DetailsTile(
+                          title: 'Total Balance',
+                          value: provider.customerModel!.remainingAmount
+                              .toString()),
+                      DetailsTile(
+                          title: 'Total Weight',
+                          value:
+                              provider.customerModel!.totalWeight.toString()),
+                      DetailsTile(
+                          title: 'Total Amount',
+                          value:
+                              provider.customerModel!.totalAmount.toString()),
+                      DetailsTile(
+                          title: 'Total Paid',
+                          value:
+                              provider.customerModel!.totalAmount.toString()),
+                      DetailsTile(
+                          title: 'Collected Barrels (Qty)',
+                          value:
+                              provider.customerModel!.barrelsTaken.toString()),
+                      DetailsTile(
+                          title: 'Barrels Remining (Qty)',
+                          value: provider.customerModel!.barrelsRemaining
+                              .toString()),
+                      DetailsTile(
+                          title: 'Total Barrels (Qty)',
+                          value:
+                              provider.customerModel!.barrelsTaken.toString()),
+                    ],
+                  ),
+                ),
+              ),
       ),
     );
   }
