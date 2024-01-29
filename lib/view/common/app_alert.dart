@@ -5,12 +5,12 @@ class AppAlert {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text('Alert'),
+        title: const Text('Alert'),
         content: Text(message),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text('OK'),
+            child: const Text('OK'),
           ),
         ],
       ),

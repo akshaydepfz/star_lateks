@@ -8,6 +8,5 @@ class HomeProvider extends ChangeNotifier {
   void changeIndexByTap(int index) {
     _selectedIndex = index;
     notifyListeners();
-    print(_selectedIndex);
   }
 }

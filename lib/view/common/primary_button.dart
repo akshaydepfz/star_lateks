@@ -18,12 +18,12 @@ class PrimaryButton extends StatelessWidget {
       width: MediaQuery.of(context).size.width,
       child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-              primary: Colors.green,
+              backgroundColor: Colors.green,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(6.0))),
           onPressed: onPressed,
           child: isLoading
-              ? SizedBox(
+              ? const SizedBox(
                   height: 30,
                   width: 30,
                   child: CircularProgressIndicator(

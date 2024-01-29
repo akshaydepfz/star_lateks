@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:star_lateks/view/common/app_alert.dart';
 import 'package:star_lateks/view/customer/screens/customer_list_screen.dart';
 
@@ -220,4 +219,3 @@ class CustomerModel {
     );
   }
 }
-    
